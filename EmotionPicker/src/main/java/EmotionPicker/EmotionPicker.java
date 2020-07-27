@@ -5,6 +5,7 @@ import javax.swing.*;
 import java.awt.Image;
 import java.io.File;
 import java.io.IOException;
+import javax.imageio.ImageIO;
 
 // https://childhood101.com/helping-children-manage-big-emotions-printable-emotions-cards/
 // Images were pulled from this website.
@@ -19,9 +20,13 @@ public class EmotionPicker extends JPanel {
     public EmotionPicker() {
 
         // JPanel panel = new JPanel();
-        JLabel sad = new JLabel("EEEE", JLabel.LEFT);
-//        panel.setLayout(new FlowLayout());
-//        panel.add(sad);
+        Image sadImg = getImage("resources/Images/sad.PNG");
+        ImageIcon sadIcon = new ImageIcon(sadImg);
+
+        JLabel sad = new JLabel();
+        sad.setIcon(sadIcon);
+        
+        
         add(sad);
     }
 
@@ -35,10 +40,14 @@ public class EmotionPicker extends JPanel {
     }
 
     public static Image getImage(String filepath) {
+        Image picture = null;
         try {
-            Image picture = ImageIO.read(new File(filepath));
+            picture = ImageIO.read(new File(filepath));
         } catch (IOException e) {
+            String workingDir = System.getProperty("user.dir");
+            System.out.println("Current working directory : " + workingDir);
             e.printStackTrace();
         }
+        return picture;
     }
 }
