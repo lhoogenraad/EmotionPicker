@@ -2,6 +2,9 @@ package EmotionPicker;
 
 import java.awt.*;
 import javax.swing.*;
+import java.awt.Image;
+import java.io.File;
+import java.io.IOException;
 
 // https://childhood101.com/helping-children-manage-big-emotions-printable-emotions-cards/
 // Images were pulled from this website.
@@ -11,18 +14,17 @@ import javax.swing.*;
  *
  * @author Leon Hoogenraad, Dunedin, NZ, 2020
  */
-public class EmotionPicker extends JPanel{
-    
-    public EmotionPicker(){
-        
-       // JPanel panel = new JPanel();
-        
+public class EmotionPicker extends JPanel {
+
+    public EmotionPicker() {
+
+        // JPanel panel = new JPanel();
         JLabel sad = new JLabel("EEEE", JLabel.LEFT);
 //        panel.setLayout(new FlowLayout());
 //        panel.add(sad);
         add(sad);
     }
-    
+
     public static void main(String[] args) {
         JFrame frame = new JFrame();
         frame.getContentPane().add(new EmotionPicker());
@@ -30,5 +32,13 @@ public class EmotionPicker extends JPanel{
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(200, 200);
         frame.setVisible(true);
+    }
+
+    public static Image getImage(String filepath) {
+        try {
+            Image picture = ImageIO.read(new File(filepath));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
