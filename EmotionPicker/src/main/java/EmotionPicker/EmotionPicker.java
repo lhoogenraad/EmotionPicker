@@ -26,7 +26,6 @@ public class EmotionPicker extends JPanel {
         JLabel sad = new JLabel();
         sad.setIcon(sadIcon);
         
-        
         add(sad);
     }
 
