@@ -3,6 +3,9 @@ package EmotionPicker;
 import java.awt.*;
 import javax.swing.*;
 import java.awt.Image;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.event.WindowEvent;
 import java.io.File;
 import java.io.IOException;
 import javax.imageio.ImageIO;
@@ -16,7 +19,9 @@ import javax.imageio.ImageIO;
  * @author Leon Hoogenraad, Dunedin, NZ, 2020
  */
 public class EmotionPicker extends JPanel {
-
+    
+    private static JFrame frame;
+    
     public EmotionPicker() {
 
         // JPanel panel = new JPanel();
@@ -27,10 +32,11 @@ public class EmotionPicker extends JPanel {
         sad.setIcon(sadIcon);
         
         add(sad);
+        addListener(sad);
     }
 
     public static void main(String[] args) {
-        JFrame frame = new JFrame();
+        frame = new JFrame();
         frame.getContentPane().add(new EmotionPicker());
 
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -48,5 +54,14 @@ public class EmotionPicker extends JPanel {
             e.printStackTrace();
         }
         return picture;
+    }
+    
+    public static void addListener(JLabel label){
+        label.addMouseListener(new MouseAdapter() {
+            public void mouseClicked(MouseEvent e){
+                System.out.println("label clicked!");
+                frame.dispatchEvent(new WindowEvent(frame, WindowEvent.WINDOW_CLOSING));
+            }
+        });
     }
 }
