@@ -40,11 +40,47 @@ public class EmotionPicker extends JPanel {
         
         
         ImageIcon sadIcon = new ImageIcon(sadImg);
-
+        ImageIcon angryIcon = new ImageIcon(angryImg);
+        ImageIcon embarrassedIcon = new ImageIcon(embarrassedImg);
+        ImageIcon excitedIcon = new ImageIcon(excitedImg);
+        ImageIcon happyIcon = new ImageIcon(happyImg);
+        ImageIcon hurtIcon = new ImageIcon(hurtImg);
+        ImageIcon scaredIcon = new ImageIcon(scaredImg);
+        ImageIcon surprisedIcon = new ImageIcon(surprisedImg);
+        ImageIcon worriedIcon = new ImageIcon(worriedImg);
+        
+        
         JLabel sad = new JLabel();
+        JLabel angry = new JLabel();
+        JLabel embarrassed = new JLabel();
+        JLabel excited = new JLabel();
+        JLabel happy = new JLabel();
+        JLabel hurt = new JLabel();
+        JLabel scared = new JLabel();
+        JLabel surprised = new JLabel();
+        JLabel worried = new JLabel();
+        
         sad.setIcon(sadIcon);
+        angry.setIcon(angryIcon);
+        embarrassed.setIcon(embarrassedIcon);
+        excited.setIcon(excitedIcon);
+        happy.setIcon(happyIcon);
+        hurt.setIcon(hurtIcon);
+        scared.setIcon(scaredIcon);
+        surprised.setIcon(surprisedIcon);
+        worried.setIcon(worriedIcon);
+        
         
         add(sad);
+        add(angry);
+        add(embarrassed);
+        add(excited);
+        add(happy);
+        add(hurt);
+        add(scared);
+        add(surprised);
+        add(worried);
+        
         addListener(sad);
     }
 
