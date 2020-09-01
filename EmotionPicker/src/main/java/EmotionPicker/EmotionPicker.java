@@ -24,8 +24,21 @@ public class EmotionPicker extends JPanel {
     
     public EmotionPicker() {
 
-        // JPanel panel = new JPanel();
-        Image sadImg = getImage("resources/Images/sad.PNG");
+        // This is obviously a suboptimal way of doing this, but
+        // I can't be bothered seperating this into another file (though i may)
+        // in the future..
+        // This block 
+        Image sadImg = getImage("resources/Images/sad.PNG").getScaledInstance(145, 185, Image.SCALE_DEFAULT);
+        Image angryImg = getImage("resources/Images/angry.PNG").getScaledInstance(145, 185, Image.SCALE_DEFAULT);
+        Image embarrassedImg = getImage("resources/Images/embarrassed.PNG").getScaledInstance(145, 185, Image.SCALE_DEFAULT);
+        Image excitedImg = getImage("resources/Images/excited.PNG").getScaledInstance(145, 185, Image.SCALE_DEFAULT);
+        Image happyImg = getImage("resources/Images/happy.PNG").getScaledInstance(145, 185, Image.SCALE_DEFAULT);
+        Image hurtImg = getImage("resources/Images/hurt.PNG").getScaledInstance(145, 185, Image.SCALE_DEFAULT);
+        Image scaredImg = getImage("resources/Images/scared.PNG").getScaledInstance(145, 185, Image.SCALE_DEFAULT);
+        Image surprisedImg = getImage("resources/Images/surprised.PNG").getScaledInstance(145, 185, Image.SCALE_DEFAULT);
+        Image worriedImg = getImage("resources/Images/worried.PNG").getScaledInstance(145, 185, Image.SCALE_DEFAULT);
+        
+        
         ImageIcon sadIcon = new ImageIcon(sadImg);
 
         JLabel sad = new JLabel();
