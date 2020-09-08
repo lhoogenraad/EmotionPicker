@@ -9,6 +9,8 @@ import java.awt.event.WindowEvent;
 import java.io.File;
 import java.io.IOException;
 import javax.imageio.ImageIO;
+import EmotionPicker.ActionScreens.*;
+import javax.swing.border.Border;
 
 // https://childhood101.com/helping-children-manage-big-emotions-printable-emotions-cards/
 // Images were pulled from this website.
@@ -23,7 +25,7 @@ public class EmotionPicker extends JPanel {
     private static JFrame frame;
     
     public EmotionPicker() {
-
+        Border bl = BorderFactory.createLineBorder(Color.black);
         // This is obviously a suboptimal way of doing this, but
         // I can't be bothered seperating this into another file (though i may)
         Image sadImg = getImage("resources/Images/sad.PNG").getScaledInstance(145, 185, Image.SCALE_DEFAULT);
@@ -88,6 +90,7 @@ public class EmotionPicker extends JPanel {
         addListener(scared);
         addListener(surprised);
         addListener(worried);
+        sad.setBorder(bl);
     }
 
     public static void main(String[] args) {
