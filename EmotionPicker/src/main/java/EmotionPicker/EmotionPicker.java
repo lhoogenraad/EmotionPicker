@@ -26,8 +26,6 @@ public class EmotionPicker extends JPanel {
 
         // This is obviously a suboptimal way of doing this, but
         // I can't be bothered seperating this into another file (though i may)
-        // in the future..
-        // This block 
         Image sadImg = getImage("resources/Images/sad.PNG").getScaledInstance(145, 185, Image.SCALE_DEFAULT);
         Image angryImg = getImage("resources/Images/angry.PNG").getScaledInstance(145, 185, Image.SCALE_DEFAULT);
         Image embarrassedImg = getImage("resources/Images/embarrassed.PNG").getScaledInstance(145, 185, Image.SCALE_DEFAULT);
@@ -82,6 +80,14 @@ public class EmotionPicker extends JPanel {
         add(worried);
         
         addListener(sad);
+        addListener(angry);
+        addListener(embarrassed);
+        addListener(excited);
+        addListener(happy);
+        addListener(hurt);
+        addListener(scared);
+        addListener(surprised);
+        addListener(worried);
     }
 
     public static void main(String[] args) {
