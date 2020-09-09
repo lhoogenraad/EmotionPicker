@@ -21,9 +21,10 @@ import javax.swing.border.Border;
  * @author Leon Hoogenraad, Dunedin, NZ, 2020
  */
 public class EmotionPicker extends JPanel {
-    
+
     private static JFrame frame;
-    
+    private static JFrame actionFrame;
+
     public EmotionPicker() {
         Border bl = BorderFactory.createLineBorder(Color.black);
         // This is obviously a suboptimal way of doing this, but
@@ -37,8 +38,7 @@ public class EmotionPicker extends JPanel {
         Image scaredImg = getImage("resources/Images/scared.PNG").getScaledInstance(145, 185, Image.SCALE_DEFAULT);
         Image surprisedImg = getImage("resources/Images/surprised.PNG").getScaledInstance(145, 185, Image.SCALE_DEFAULT);
         Image worriedImg = getImage("resources/Images/worried.PNG").getScaledInstance(145, 185, Image.SCALE_DEFAULT);
-        
-        
+
         ImageIcon sadIcon = new ImageIcon(sadImg);
         ImageIcon angryIcon = new ImageIcon(angryImg);
         ImageIcon embarrassedIcon = new ImageIcon(embarrassedImg);
@@ -48,8 +48,7 @@ public class EmotionPicker extends JPanel {
         ImageIcon scaredIcon = new ImageIcon(scaredImg);
         ImageIcon surprisedIcon = new ImageIcon(surprisedImg);
         ImageIcon worriedIcon = new ImageIcon(worriedImg);
-        
-        
+
         JLabel sad = new JLabel();
         JLabel angry = new JLabel();
         JLabel embarrassed = new JLabel();
@@ -59,7 +58,7 @@ public class EmotionPicker extends JPanel {
         JLabel scared = new JLabel();
         JLabel surprised = new JLabel();
         JLabel worried = new JLabel();
-        
+
         sad.setIcon(sadIcon);
         angry.setIcon(angryIcon);
         embarrassed.setIcon(embarrassedIcon);
@@ -69,8 +68,7 @@ public class EmotionPicker extends JPanel {
         scared.setIcon(scaredIcon);
         surprised.setIcon(surprisedIcon);
         worried.setIcon(worriedIcon);
-        
-        
+
         add(sad);
         add(angry);
         add(embarrassed);
@@ -80,17 +78,18 @@ public class EmotionPicker extends JPanel {
         add(scared);
         add(surprised);
         add(worried);
+
+        addListener(sad, 1);
+        addListener(angry, 2);
+        addListener(embarrassed, 3);
+        addListener(excited, 4);
+        addListener(happy, 5);
+        addListener(hurt, 6);
+        addListener(scared, 7);
+        addListener(surprised, 8);
+        addListener(worried, 9);
         
-        addListener(sad);
-        addListener(angry);
-        addListener(embarrassed);
-        addListener(excited);
-        addListener(happy);
-        addListener(hurt);
-        addListener(scared);
-        addListener(surprised);
-        addListener(worried);
-        sad.setBorder(bl);
+        angry.setBorder(bl);
     }
 
     public static void main(String[] args) {
@@ -98,8 +97,11 @@ public class EmotionPicker extends JPanel {
         frame.getContentPane().add(new EmotionPicker());
 
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(200, 200);
+        frame.setSize(new Dimension(920, 560));
         frame.setVisible(true);
+
+        actionFrame = new JFrame();
+        actionFrame.setVisible(false);
     }
 
     public static Image getImage(String filepath) {
@@ -113,12 +115,51 @@ public class EmotionPicker extends JPanel {
         }
         return picture;
     }
-    
-    public static void addListener(JLabel label){
+
+    public static void addListener(JLabel label, int selector) {
+        System.out.println("selector = " + selector);
         label.addMouseListener(new MouseAdapter() {
-            public void mouseClicked(MouseEvent e){
+            public void mouseClicked(MouseEvent e) {
                 System.out.println("label clicked!");
-                frame.dispatchEvent(new WindowEvent(frame, WindowEvent.WINDOW_CLOSING));
+                frame.dispose();
+                
+                switch(selector){
+                    case 1:
+                        actionFrame.getContentPane().add(new SadAS());
+                        break;
+                    case 2:
+                        actionFrame.getContentPane().add(new AngryAS());
+                        break;
+                    case 3:
+                        actionFrame.getContentPane().add(new EmbarrassedAS());
+                        break;
+                    case 4:
+                        actionFrame.getContentPane().add(new ExcitedAS());
+                        break;
+                    case 5:
+                        actionFrame.getContentPane().add(new HappyAS());
+                        break;
+                    case 6:
+                        actionFrame.getContentPane().add(new HurtAS());
+                        break;
+                    case 7:
+                        actionFrame.getContentPane().add(new ScaredAS());
+                        break;
+                    case 8:
+                        actionFrame.getContentPane().add(new SurprisedAS());
+                        break;
+                    case 9:
+                        actionFrame.getContentPane().add(new WorriedAS());
+                        break;
+                    default:
+                        System.out.println("uh oh, something went horribly wrong. Selector = " + selector);
+                        System.exit(ERROR);
+                        break;
+                }
+                
+                actionFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                actionFrame.setSize(Toolkit.getDefaultToolkit().getScreenSize());
+                actionFrame.setVisible(true);
             }
         });
     }
