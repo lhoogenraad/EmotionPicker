@@ -97,7 +97,7 @@ public class EmotionPicker extends JPanel {
         frame.getContentPane().add(new EmotionPicker());
 
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(new Dimension(920, 560));
+        frame.setSize(new Dimension(780, 500));
         frame.setVisible(true);
 
         actionFrame = new JFrame();
@@ -158,7 +158,7 @@ public class EmotionPicker extends JPanel {
                 }
                 
                 actionFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                actionFrame.setSize(Toolkit.getDefaultToolkit().getScreenSize());
+                actionFrame.setSize(780, 500);
                 actionFrame.setVisible(true);
             }
         });
