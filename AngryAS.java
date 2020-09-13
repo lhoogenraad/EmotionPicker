@@ -40,9 +40,9 @@ public class AngryAS extends JPanel implements ActionScreen {
         for (int i = 0; i < labels.size(); i++) {
             JLabel label = labels.get(i);
 	    
-            label.setPreferredSize(new Dimension(250, 100));
+            label.setPreferredSize(new Dimension(350, 100));
             label.setBorder(bl);
-	        label.setFont(new Font("Serif", Font.PLAIN, 25));
+	        label.setFont(new Font("Serif", Font.PLAIN, 15));
             addListener(label, i);
             add(label);
         }

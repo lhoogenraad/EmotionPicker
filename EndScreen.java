@@ -10,7 +10,7 @@ public class EndScreen extends JPanel{
         String finalString = "I am " + emotion + ", so I want to " + action.toLowerCase();
         JLabel finalLabel = new JLabel(finalString);
         finalLabel.setPreferredSize(new Dimension(780, 500));
-	finalLabel.setFont(new Font("Serif", Font.PLAIN, 35));
+	finalLabel.setFont(new Font("Serif", Font.PLAIN, 20));
         add(finalLabel);
     }
 }
