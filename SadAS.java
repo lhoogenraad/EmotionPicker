@@ -27,12 +27,10 @@ public class SadAS  extends JPanel implements ActionScreen {
         add(titleLabel);
         ArrayList<JLabel> labels = new ArrayList<>();
 
-        labels.add(new JLabel("a"));
-        labels.add(new JLabel("b"));
-        labels.add(new JLabel("c"));
-        labels.add(new JLabel("d"));
-        labels.add(new JLabel("e"));
-        labels.add(new JLabel("f"));
+        labels.add(new JLabel("Get a hug"));
+        labels.add(new JLabel("Talk about what is making me sad"));
+        labels.add(new JLabel("Do some baking"));
+        labels.add(new JLabel("Get a snack"));
 
         for (int i = 0; i < labels.size(); i++) {
             JLabel label = labels.get(i);

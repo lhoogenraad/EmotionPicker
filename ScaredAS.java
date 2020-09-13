@@ -29,9 +29,8 @@ public class ScaredAS  extends JPanel implements ActionScreen {
 
         labels.add(new JLabel("Talk about what is making me scared"));
         labels.add(new JLabel("Get a hug"));
-        labels.add(new JLabel(""));
-        labels.add(new JLabel(""));
-        labels.add(new JLabel(""));
+        labels.add(new JLabel("Watch some TV"));
+        labels.add(new JLabel("Hang out with my caregiver"));
 
         for (int i = 0; i < labels.size(); i++) {
             JLabel label = labels.get(i);

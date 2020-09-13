@@ -27,12 +27,10 @@ public class HurtAS  extends JPanel implements ActionScreen {
         add(titleLabel);
         ArrayList<JLabel> labels = new ArrayList<>();
 
-        labels.add(new JLabel("a"));
-        labels.add(new JLabel("b"));
-        labels.add(new JLabel("c"));
-        labels.add(new JLabel("d"));
-        labels.add(new JLabel("e"));
-        labels.add(new JLabel("f"));
+        labels.add(new JLabel("Talk about what hurt me"));
+        labels.add(new JLabel("Get a hug"));
+        labels.add(new JLabel("Rub it"));
+        labels.add(new JLabel("Get a kiss to make it feel better"));
 
         for (int i = 0; i < labels.size(); i++) {
             JLabel label = labels.get(i);

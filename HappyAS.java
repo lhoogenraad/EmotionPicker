@@ -27,12 +27,10 @@ public class HappyAS  extends JPanel implements ActionScreen    {
         add(titleLabel);
         ArrayList<JLabel> labels = new ArrayList<>();
 
-        labels.add(new JLabel("a"));
-        labels.add(new JLabel("b"));
-        labels.add(new JLabel("c"));
-        labels.add(new JLabel("d"));
-        labels.add(new JLabel("e"));
-        labels.add(new JLabel("f"));
+        labels.add(new JLabel("Chat"));
+        labels.add(new JLabel("Play"));
+        labels.add(new JLabel("Go for a walk"));
+        labels.add(new JLabel("Do some baking"));
 
         for (int i = 0; i < labels.size(); i++) {
             JLabel label = labels.get(i);
