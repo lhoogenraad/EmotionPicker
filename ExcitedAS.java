@@ -30,7 +30,7 @@ public class ExcitedAS  extends JPanel implements ActionScreen {
         labels.add(new JLabel("Chat about what I'm excited about"));
         labels.add(new JLabel("Dance"));
         labels.add(new JLabel("Go for a walk"));
-        labels.add(new JLabel(""));
+        labels.add(new JLabel("Play with friends"));
 
         for (int i = 0; i < labels.size(); i++) {
             JLabel label = labels.get(i);

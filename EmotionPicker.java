@@ -86,7 +86,15 @@ public class EmotionPicker extends JPanel {
         //addListener(surprised, 8);
         addListener(worried, 9);
         
+        sad.setBorder(bl);
         angry.setBorder(bl);
+        embarrassed.setBorder(bl);
+        excited.setBorder(bl);
+        happy.setBorder(bl);
+        hurt.setBorder(bl);
+        scared.setBorder(bl);
+        //surprised.setBorder(bl);
+        worried.setBorder(bl);
     }
 
     public static void main(String[] args) {

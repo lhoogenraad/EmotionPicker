@@ -32,12 +32,10 @@ public class AngryAS extends JPanel implements ActionScreen {
         add(titleLabel);
         ArrayList<JLabel> labels = new ArrayList<>();
 
-        labels.add(new JLabel("a"));
-        labels.add(new JLabel("b"));
-        labels.add(new JLabel("c"));
-        labels.add(new JLabel("d"));
-        labels.add(new JLabel("e"));
-        labels.add(new JLabel("f"));
+        labels.add(new JLabel("Have some alone time"));
+        labels.add(new JLabel("Go for a walk"));
+        labels.add(new JLabel("Punch a pillow"));
+        labels.add(new JLabel("Talk about what has made me angry"));
 
         for (int i = 0; i < labels.size(); i++) {
             JLabel label = labels.get(i);
