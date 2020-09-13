@@ -8,6 +8,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.Border;
+import java.awt.Font;
 
 /**
  *
@@ -20,21 +21,24 @@ public class ScaredAS  extends JPanel implements ActionScreen {
 
         frame = parentFrame;
         String title = "I am scared, so I want to...";
-        add(new JLabel(title));
+	    JLabel titleLabel = new JLabel(title);
+	    titleLabel.setPreferredSize(new Dimension(780, 50));
+	    titleLabel.setFont(new Font("Serif", Font.PLAIN, 30));
+        add(titleLabel);
         ArrayList<JLabel> labels = new ArrayList<>();
 
-        labels.add(new JLabel("a"));
-        labels.add(new JLabel("b"));
-        labels.add(new JLabel("c"));
-        labels.add(new JLabel("d"));
-        labels.add(new JLabel("e"));
-        labels.add(new JLabel("f"));
+        labels.add(new JLabel("Talk about what is making me scared"));
+        labels.add(new JLabel("Get a hug"));
+        labels.add(new JLabel(""));
+        labels.add(new JLabel(""));
+        labels.add(new JLabel(""));
 
-        for (int i = 1; i < labels.size(); i++) {
+        for (int i = 0; i < labels.size(); i++) {
             JLabel label = labels.get(i);
-            label.setSize(new Dimension(100, 100));
+	    
+            label.setPreferredSize(new Dimension(250, 100));
             label.setBorder(bl);
-            label.setForeground(Color.red);
+	        label.setFont(new Font("Serif", Font.PLAIN, 25));
             addListener(label, i);
             add(label);
         }

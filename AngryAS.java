@@ -10,7 +10,7 @@ import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import javax.swing.*;
 import javax.swing.border.Border;
-
+import java.awt.Font;
 
 /**
  *
@@ -26,7 +26,10 @@ public class AngryAS extends JPanel implements ActionScreen {
     public AngryAS(JFrame parentFrame) {        
         frame = parentFrame;
         String title = "I am angry, so I want to...";
-        add(new JLabel(title));
+	    JLabel titleLabel = new JLabel(title);
+	    titleLabel.setPreferredSize(new Dimension(780, 50));
+	    titleLabel.setFont(new Font("Serif", Font.PLAIN, 30));
+        add(titleLabel);
         ArrayList<JLabel> labels = new ArrayList<>();
 
         labels.add(new JLabel("a"));
@@ -36,11 +39,12 @@ public class AngryAS extends JPanel implements ActionScreen {
         labels.add(new JLabel("e"));
         labels.add(new JLabel("f"));
 
-        for (int i = 1; i < labels.size(); i++) {
+        for (int i = 0; i < labels.size(); i++) {
             JLabel label = labels.get(i);
-            label.setSize(new Dimension(100, 100));
+	    
+            label.setPreferredSize(new Dimension(250, 100));
             label.setBorder(bl);
-            label.setForeground(Color.red);
+	        label.setFont(new Font("Serif", Font.PLAIN, 25));
             addListener(label, i);
             add(label);
         }

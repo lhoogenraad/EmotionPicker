@@ -73,7 +73,7 @@ public class EmotionPicker extends JPanel {
         add(happy);
         add(hurt);
         add(scared);
-        add(surprised);
+        //add(surprised);
         add(worried);
 
         addListener(sad, 1);
@@ -83,7 +83,7 @@ public class EmotionPicker extends JPanel {
         addListener(happy, 5);
         addListener(hurt, 6);
         addListener(scared, 7);
-        addListener(surprised, 8);
+        //addListener(surprised, 8);
         addListener(worried, 9);
         
         angry.setBorder(bl);
@@ -142,9 +142,9 @@ public class EmotionPicker extends JPanel {
                     case 7:
                         actionFrame.getContentPane().add(new ScaredAS(actionFrame));
                         break;
-                    case 8:
+                    /*case 8:
                         actionFrame.getContentPane().add(new SurprisedAS(actionFrame));
-                        break;
+                        break;*/
                     case 9:
                         actionFrame.getContentPane().add(new WorriedAS(actionFrame));
                         break;

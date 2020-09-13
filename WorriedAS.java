@@ -21,9 +21,9 @@ public class WorriedAS  extends JPanel implements ActionScreen {
 
         frame = parentFrame;
         String title = "I am worried, so I want to...";
-	JLabel titleLabel = new JLabel(title);
-	titleLabel.setPreferredSize(new Dimension(780, 50));
-	titleLabel.setFont(new Font("Serif", Font.PLAIN, 30));
+	    JLabel titleLabel = new JLabel(title);
+	    titleLabel.setPreferredSize(new Dimension(780, 50));
+	    titleLabel.setFont(new Font("Serif", Font.PLAIN, 30));
         add(titleLabel);
         ArrayList<JLabel> labels = new ArrayList<>();
 
@@ -33,12 +33,12 @@ public class WorriedAS  extends JPanel implements ActionScreen {
         labels.add(new JLabel("Watch some TV"));
         labels.add(new JLabel("Get a snack"));
 
-        for (int i = 1; i < labels.size(); i++) {
+        for (int i = 0; i < labels.size(); i++) {
             JLabel label = labels.get(i);
 	    
             label.setPreferredSize(new Dimension(250, 100));
             label.setBorder(bl);
-	    label.setFont(new Font("Serif", Font.PLAIN, 25));
+	        label.setFont(new Font("Serif", Font.PLAIN, 25));
             addListener(label, i);
             add(label);
         }
