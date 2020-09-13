@@ -125,34 +125,34 @@ public class EmotionPicker extends JPanel {
                 
                 switch(selector){
                     case 1:
-                        actionFrame.getContentPane().add(new SadAS());
+                        actionFrame.getContentPane().add(new SadAS(actionFrame));
                         break;
                     case 2:
-                        actionFrame.getContentPane().add(new AngryAS());
+                        actionFrame.getContentPane().add(new AngryAS(actionFrame));
                         break;
                     case 3:
-                        actionFrame.getContentPane().add(new EmbarrassedAS());
+                        actionFrame.getContentPane().add(new EmbarrassedAS(actionFrame));
                         break;
                     case 4:
-                        actionFrame.getContentPane().add(new ExcitedAS());
+                        actionFrame.getContentPane().add(new ExcitedAS(actionFrame));
                         break;
                     case 5:
-                        actionFrame.getContentPane().add(new HappyAS());
+                        actionFrame.getContentPane().add(new HappyAS(actionFrame));
                         break;
                     case 6:
-                        actionFrame.getContentPane().add(new HurtAS());
+                        actionFrame.getContentPane().add(new HurtAS(actionFrame));
                         break;
                     case 7:
-                        actionFrame.getContentPane().add(new ScaredAS());
+                        actionFrame.getContentPane().add(new ScaredAS(actionFrame));
                         break;
                     case 8:
-                        actionFrame.getContentPane().add(new SurprisedAS());
+                        actionFrame.getContentPane().add(new SurprisedAS(actionFrame));
                         break;
                     case 9:
-                        actionFrame.getContentPane().add(new WorriedAS());
+                        actionFrame.getContentPane().add(new WorriedAS(actionFrame));
                         break;
                     default:
-                        System.out.println("uh oh, something went horribly wrong. Selector = " + selector);
+                        System.out.println("uh oh, something went horribly wrong\nSelector = " + selector);
                         System.exit(ERROR);
                         break;
                 }
